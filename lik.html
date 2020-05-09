@@ -1,0 +1,80 @@
+<html>
+<head>
+
+<div align="center">
+	<legend><font size="+2"><strong>Registration form</strong></font></legend><br>
+
+<script>
+function reg()
+{
+var a=document.getElementById("fname").value;
+var b=document.getElementById("lname").value;
+var c=document.getElementById("password").value;
+var d=document.getElementById("cpassword").value;
+var e=document.getElementById("num").value;
+
+if(a=="")
+{alert("please enter the first name");}
+
+if(b=="")
+{alert("please enter the last name");}
+
+if(c.length<5)
+{alert("password should not be less than 5");}
+if(c.search(/[a-z]/)==-1)
+{alert("please enter atleast one small alphabet")}
+if(c.search(/[A-Z]/)==-1)
+{alert("please enter atleast one capital alphabet")}
+if(c.search(/[0-9]/)==-1)
+{alert("please enter a number")}
+if(c.search(/[!\@\#\$\%\^\&\*]/)==-1)
+{alert("please enter atleast one special character")}
+
+if(c!=d)
+{alert("please enter the correct password");}
+if(e.length!=13)
+{alert("the number should be 10 digits");}
+else
+{alert("SUCCESSFUL");}
+}
+
+</script>
+</div>
+</head>
+
+
+<body>
+
+<form name="f1" onsubmit="return reg()" style="text-align:center">
+<p>First name: <input id="fname" value=""></p>
+Last name: <input id="lname" value="">
+<br>Password: <input type="password" id="password" value=""></br>
+<br>Confrim Password: <input type="password" id="cpassword" value=""></br>
+
+	<p><b>country : 
+	<select name="country">
+	<option value="India">India</option>
+	<option value="United States Of America">United States Of America</option>
+	<option value="Alaska">Alaska</option>
+	<option value="South Africa">South Africa</option>
+	<option value="China">China</option>
+	<option value="Japan">Japan</option>
+	</select>
+	</b></p>
+
+	<p>date of birth:<br>
+	<input type="date" name="date"></p>
+	
+    <p><b>Email : </b><input type="email" name="umail" required/></p>
+
+    <p><b>Gender : </b><input type="radio" name="gender" value="m">Male&nbsp;<input type="radio" name="gender" value="f">Female</p>
+
+    <p><b>Mobile No. : </b><input id="num" value="+91" checked/></p>
+
+    <b>Address : </b><textarea placeholder="Input Address" name="address"></textarea>
+
+
+<input type="submit" value="Submit">
+</form>
+</body>
+</html>
